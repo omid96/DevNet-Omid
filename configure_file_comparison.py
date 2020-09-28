@@ -10,9 +10,6 @@ devices = [
 ]
 
 
-# config_files = defaultdict()
-
-
 def read_terminal(telnet_connection, hostname):
 	time.sleep(5)
 	return telnet_connection.read_very_eager().decode('utf-8')
@@ -54,15 +51,6 @@ if __name__ == "__main__":
                 print("Skip saving config")
         else:
             print("There are no new changes in config")
-
-        # write_terminal(telnet_connection, "show startup-config \r\n")
-        # startup_config = read_terminal(telnet_connection, device["hostname"])
-        # startup_config_hash = hashlib.md5(bytes(startup_config, encoding='utf-8'))
-        # print(startup_config_hash.digest())
-
-        # print(lines)
-        # for line in lines:
-        #     print ( line )
 
         telnet_connection.close()
 
